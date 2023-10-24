@@ -69,6 +69,7 @@ h1, h2, h3, p{
 
 .input-color{
     background-color: var(--secondary-color);
+    color: var(--text-color);
 }
 
 .search-input{
