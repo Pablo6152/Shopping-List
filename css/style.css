@@ -6,6 +6,7 @@
     --secondary-text-color: rgba(149,148,152,255);
     --primary-accent-color: #007aff;
     --secondary-accent-color: #35c759;
+    --alt-color: #e1b53f;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
@@ -70,6 +71,33 @@ h1, h2, h3, p{
 .input-color{
     background-color: var(--secondary-color);
     color: var(--text-color);
+}
+
+.action{
+    position: fixed;
+    top: 90%;
+    bottom: 15%;
+    left: 80%;
+    right: 40%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    padding: 2em;
+
+    border: none;
+    cursor: pointer;
+}
+
+.action-color{
+    background-color: var(--primary-color);
+    color: var(--alt-color);
+    
+}
+.action-label{
+    font-size: 3.4rem;
 }
 
 .search-input{
