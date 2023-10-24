@@ -1,3 +1,12 @@
+:root{
+    --primary-color: #000000;
+    --secondary-color: #252525;
+    --tertiary-color: rgba(227,227,232,255);
+    --text-color: #fff;
+    --primary-accent-color: #007aff;
+    --secondary-accent-color: #35c759;
+  }
+
 body{
-    background-color: #252525;
+    background-color: var(--primary-color);
 }
