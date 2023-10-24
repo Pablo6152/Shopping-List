@@ -1,13 +1,104 @@
 :root{
-    --primary-color: #000000;
-    --secondary-color: #252525;
+    --primary-color: rgba(0,0,0,255);
+    --secondary-color: rgba(27,27,29,255);
     --tertiary-color: rgba(227,227,232,255);
-    --text-color: #fff;
+    --text-color: rgba(255,255,255,255);
+    --secondary-text-color: rgba(149,148,152,255);
     --primary-accent-color: #007aff;
     --secondary-accent-color: #35c759;
-  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+@font-face {
+  font-family: 'Quicksand', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2) format('woff2');
+  font-display: swap;
+}
+
+*{
+    box-sizing: border-box;
+    
+    /* outline: 1px solid darkred; */
+}
+
+html{
+    height: 100%;
+}
 
 body{
     background-color: var(--primary-color);
     color: #fff;
+
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+}
+
+
+h1, h2, h3, p{
+    margin: 0;
+}
+
+
+/* Typography */
+
+.app-title{
+    margin-top: 1em;
+}
+
+.item-name{
+    font-weight: 600;
+}
+
+/* Layout */
+.app{
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.input{
+    border: none;
+    border-radius: 9px;
+}
+
+.input-color{
+    background-color: var(--secondary-color);
+}
+
+.search-input{
+    margin-top: 1em;
+    padding: .7em;
+}
+
+.items-list-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+
+    background-color: var(--secondary-color);
+    border-radius: 9px;
+    padding: 0 0em 1em 1em;
+
+}
+
+.item{
+    width: 95%;
+    margin-top: 1em;
+}
+
+.item-color{
+    border-bottom: .1px solid rgb(49, 49, 49);
+}
+
+.item-data{
+    display: flex;
+    justify-content: space-between;
+    margin: .2em 0;
+
+    color: var(--secondary-text-color);
 }
