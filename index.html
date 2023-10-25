@@ -3,12 +3,25 @@
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shopping tracker</title>
 </head>
 <body>
+
+    <div class="add-container hide-window" id="add-container">
+        <div class="add-event" id="add-event-window">
+            <h1>Add item</h1>
+            
+            <p>Name</p>
+            <input type="text">
+        </div>
+    </div>
+
     <div class="app">
         <h1 class="app-title">Shopping list</h1>
 
@@ -31,12 +44,14 @@
             </div>
         </div>
 
-        <button id="#" class="action action-color">
+        <button id="action-add" class="action action-color">
             <span class="material-icons action-label">
                 add
             </span>
         </button>
 
     </div>
+
+    <script type="module" src="./js/index.js"></script>
 </body>
 </html>

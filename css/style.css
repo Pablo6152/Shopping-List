@@ -9,15 +9,6 @@
     --alt-color: #e1b53f;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
-@font-face {
-  font-family: 'Quicksand', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2) format('woff2');
-  font-display: swap;
-}
-
 *{
     box-sizing: border-box;
     
@@ -32,7 +23,7 @@ body{
     background-color: var(--primary-color);
     color: #fff;
 
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Nunito', sans-serif;
     margin: 0;
 }
 
@@ -41,6 +32,13 @@ h1, h2, h3, p{
     margin: 0;
 }
 
+.show-window{
+    display: flex;
+}
+
+.hide-window{
+    display: none;
+}
 
 /* Typography */
 
@@ -132,4 +130,29 @@ h1, h2, h3, p{
     margin: .2em 0;
 
     color: var(--secondary-text-color);
+}
+
+
+.add-container{
+    background-color: rgba(0,0,0,.9);
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.add-event{
+    display: flex;
+    flex-direction: column;
+
+    background-color: rgba(27,27,29,255);
+    color: var(--text-color);
+    border-radius: 14px;
+    padding: 1em;
+
+
 }
