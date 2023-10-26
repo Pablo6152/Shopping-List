@@ -1,9 +1,10 @@
 const actionAdd = document.getElementById("action-add")
 const addContainer = document.getElementById("add-container")
+const backButton = document.getElementById("back-btn")
 
 
 actionAdd.addEventListener("click", showAddWindow)
-addContainer.addEventListener("click", hideAddWindow)
+backButton.addEventListener("click", hideAddWindow)
 
 function showAddWindow(){
         addContainer.classList.remove("hide-window")
