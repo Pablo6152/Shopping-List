@@ -7,7 +7,13 @@ const itemAddPrice = document.getElementById("add-item-price")
 const itemAddDate = document.getElementById("add-item-date")
 const itemsList = document.getElementById("items-list")
 const totalContainer = document.getElementById("total-container")
-const items = []
+const deleteBtn = document.getElementById("delete-btn")
+const items = [
+    {
+        name: "Docena de huevos",
+        price: 100
+    }
+]
 
 
 function loadApp(){
@@ -21,12 +27,12 @@ function loadApp(){
     for (let i = 0; i < itemsDisplay.length; i++) {
         appData += `
             <div id="items-list-container" class="items-list-container">
-                <div class="item item-color">
+                <div class="item item-head item-color">
                 <p class="item-name">${itemsDisplay[i].name}</p>
-                <div class="item-data">
+                </div>
+                <div class="item item-data">
                     <p class="category">Food</p>
                     <p class="price">$ ${itemsDisplay[i].price}</p>
-                </div>
                 </div>
             </div>
        `
