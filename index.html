@@ -29,37 +29,28 @@
                 </div>
                 <div class="input-field">
                     <label for="add-item-name">Price</label>
-                    <input type="text" id="add-item-name" class="add-input input">
+                    <input type="value" id="add-item-price" class="add-input input">
                 </div>
                 <div class="input-field">
                     <label for="add-item-name">Date</label>
-                    <input type="text" id="add-item-name" class="add-input input">
+                    <input type="date" id="add-item-date" class="add-input input">
                 </div>
             </div>
+
+            <div class="add-event-action-buttons">
+                <button>Save draft</button>
+                <button id="add-item">Add</button>
+            </div>
         </div>
+
     </div>
 
-    <div class="app">
+    <div class="app" id="app">
         <h1 class="app-title">Shopping list</h1>
 
         <input type="text" placeholder="Search" class="input input-color search-input">
 
-        <div id="items-list-container" class="items-list-container">
-            <div class="item item-color">
-                <p class="item-name">Item test</p>
-                <div class="item-data">
-                    <p class="category">Food</p>
-                    <p class="price">$ 77.52</p>
-                </div>
-            </div>
-            <div class="item item-color">
-                <p class="item-name">Item test</p>
-                <div class="item-data">
-                    <p class="category">Food</p>
-                    <p class="price">$ 77.52</p>
-                </div>
-            </div>
-        </div>
+        
 
         <button id="action-add" class="action action-color">
             <span class="material-icons action-label">
