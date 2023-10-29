@@ -112,25 +112,21 @@ h1, h2, h3, p{
     font-size: 1.2rem;
 }
 
-.items-list-container{
+.item{
     display: flex;
     flex-direction: column;
     margin-top: 1em;
+    padding: 1em;
 
     background-color: var(--secondary-color);
     border-radius: 9px;
-    padding: 0 0em 1em 1em;
 
 }
 
-.item{
-    width: 95%;
-    margin-top: 1em;
-}
 
-/* .item-color{
-    border-bottom: .1px solid rgb(49, 49, 49);
-} */
+.item-color{
+    background-color: var(--secondary-color);
+}
 
 .item-head{
     display: flex;

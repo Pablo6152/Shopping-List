@@ -8,13 +8,31 @@ const itemAddDate = document.getElementById("add-item-date")
 const itemsList = document.getElementById("items-list")
 const totalContainer = document.getElementById("total-container")
 const deleteBtn = document.getElementById("delete-btn")
-const items = [
+let items = [
     {
         name: "Docena de huevos",
         price: 100
     }
 ]
 
+itemsList.addEventListener("click", e => {
+    let id = e.target.id
+    let tmpArray
+    let newArray
+
+    if (typeof id === "number"){
+        
+        tmpArray = items.reverse()
+        newArray = tmpArray.splice(e.target.id, e.target.id)
+        items = newArray
+
+        console.log(e.target.id)
+    }
+
+    
+    console.log(items)
+    loadApp()
+})
 
 function loadApp(){
 
@@ -26,19 +44,24 @@ function loadApp(){
     
     for (let i = 0; i < itemsDisplay.length; i++) {
         appData += `
-            <div id="items-list-container" class="items-list-container">
-                <div class="item item-head item-color">
+
+            <div id="${i}" class="item">
+                <div class="item-head item-color">
                 <p class="item-name">${itemsDisplay[i].name}</p>
                 </div>
-                <div class="item item-data">
+                <div class="item-data">
                     <p class="category">Food</p>
                     <p class="price">$ ${itemsDisplay[i].price}</p>
                 </div>
             </div>
+        
        `
     }
 
+   
     itemsList.innerHTML = appData
+
+    
 
     for (let i = 0; i < items.length; i++){
         total += items[i].price
@@ -47,7 +70,7 @@ function loadApp(){
     totalContainer.innerHTML = `
         <p class="total-amount">${total}</p>
     `
-    console.log(total)
+
 }
 
 actionAdd.addEventListener("click", showAddWindow)
@@ -78,6 +101,7 @@ function submitItem(){
     loadApp()
 
 }
+
 
 
 loadApp()
