@@ -9,27 +9,13 @@ const itemsList = document.getElementById("items-list")
 const totalContainer = document.getElementById("total-container")
 const deleteBtn = document.getElementById("delete-btn")
 let items = [
-    {
-        name: "Docena de huevos",
-        price: 100
-    }
 ]
 
 itemsList.addEventListener("click", e => {
-    let id = e.target.id
-    let tmpArray
-    let newArray
+    let tmpArray = items.reverse()
+    let newArray = tmpArray.splice(e.target.id, e.target.id)
 
-    if (typeof id === "number"){
-        
-        tmpArray = items.reverse()
-        newArray = tmpArray.splice(e.target.id, e.target.id)
-        items = newArray
-
-        console.log(e.target.id)
-    }
-
-    
+    items = newArray
     console.log(items)
     loadApp()
 })
