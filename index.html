@@ -29,7 +29,7 @@
                 </div>
                 <div class="input-field">
                     <label for="add-item-name">Price</label>
-                    <input type="value" id="add-item-price" class="add-input input">
+                    <input type="number" id="add-item-price" class="add-input input">
                 </div>
                 <div class="input-field">
                     <label for="add-item-name">Date</label>
@@ -50,16 +50,19 @@
 
         <input type="text" placeholder="Search" class="input input-color search-input">
 
-        
+        <div id="items-list">
 
-        <button id="action-add" class="action action-color">
-            <span class="material-icons action-label">
-                add
-            </span>
-        </button>
+        </div>        
+
+        
 
     </div>
 
+    <button id="action-add" class="action action-color">
+        <span class="material-icons action-label">
+            add
+        </span>
+    </button>
     <script type="module" src="./js/index.js"></script>
 </body>
 </html>
