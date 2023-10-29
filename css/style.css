@@ -99,7 +99,7 @@ h1, h2, h3, p{
 
 .action-color{
     background-color: var(--primary-color);
-    color: var(--alt-color);
+    color: var(--text-color);
     
 }
 .action-label{
@@ -145,14 +145,22 @@ h1, h2, h3, p{
 
     color: var(--secondary-text-color);
 }
-.delete-btn{
+
+.nav-btn{
     background-color: var(--primary-color);
     border: none;
     cursor: pointer;
 }
+
+.add-btn-icon, .item-delete-icon{
+    font-size: 2rem;
+}
+
+.add-btn-icon{
+    color: var(--text-color);
+}
 .item-delete-icon{
     color: #e6352b;
-    font-size: 1.7rem;
 }
 
 .add-container{

@@ -49,11 +49,21 @@
     <div class="app" id="app">
         <div class="nav-bar">
             <h1 class="app-title">Shopping list</h1>
-            <button id="delete-btn" class="delete-btn">
-                <span class="material-symbols-outlined item-delete-icon">
-                    delete
-                </span>
-            </button>
+            <div class="button-container">
+                
+                <button id="action-add" class="nav-btn add-btn">
+                    <span class="material-symbols-outlined add-btn-icon">
+                        add
+                    </span>
+                </button>
+
+                <button id="delete-btn" class="nav-btn delete-btn">
+                    <span class="material-symbols-outlined item-delete-icon">
+                        delete
+                    </span>
+                </button>
+                
+            </div>
         </div>
         
         <input type="text" placeholder="Search" class="input input-color search-input">
@@ -69,12 +79,6 @@
         
 
     </div>
-
-    <button id="action-add" class="action action-color">
-        <span class="material-icons action-label">
-            add
-        </span>
-    </button>
     <script type="module" src="./js/index.js"></script>
 </body>
 </html>
