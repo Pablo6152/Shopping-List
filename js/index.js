@@ -8,8 +8,7 @@ const itemAddDate = document.getElementById("add-item-date")
 const itemsList = document.getElementById("items-list")
 const totalContainer = document.getElementById("total-container")
 const deleteBtn = document.getElementById("delete-btn")
-let items = [
-]
+let items = []
 
 itemsList.addEventListener("click", e => {
     let tmpArray = items.reverse()
