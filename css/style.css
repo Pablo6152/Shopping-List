@@ -196,3 +196,15 @@ h1, h2, h3, p{
 .price{
     color: var(--alt-color);
 }
+.total-container{
+    display: flex;
+    justify-content: center;
+    border-radius: 9px;
+    background-color: var(--secondary-color);
+
+    padding: 1em;
+    margin-top: 1em;
+}
+.total-amount{
+    font-size: 2rem;
+}

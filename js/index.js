@@ -6,37 +6,26 @@ const itemAddName = document.getElementById("add-item-name")
 const itemAddPrice = document.getElementById("add-item-price")
 const itemAddDate = document.getElementById("add-item-date")
 const itemsList = document.getElementById("items-list")
-const items = [
-    {
-        name: "Docena de huevos",
-        price: 100,
-        date: "01/01/2023"
-    },
-    {
-        name: "Tortillas 1kg",
-        price: 100,
-        date: "01/01/2023"
-    },
-    {
-        name: "Leche",
-        price: 100,
-        date: "01/01/2023"
-    }
-]
+const totalContainer = document.getElementById("total-container")
+const items = []
 
 
 function loadApp(){
+
+    const itemsDisplay = items.reverse()
+
+
     let appData = ""
     let total = 0
     
-    for (let i = 0; i < items.length; i++) {
+    for (let i = 0; i < itemsDisplay.length; i++) {
         appData += `
             <div id="items-list-container" class="items-list-container">
                 <div class="item item-color">
-                <p class="item-name">${items[i].name}</p>
+                <p class="item-name">${itemsDisplay[i].name}</p>
                 <div class="item-data">
                     <p class="category">Food</p>
-                    <p class="price">$ ${items[i].price}</p>
+                    <p class="price">$ ${itemsDisplay[i].price}</p>
                 </div>
                 </div>
             </div>
@@ -48,6 +37,10 @@ function loadApp(){
     for (let i = 0; i < items.length; i++){
         total += items[i].price
     }
+
+    totalContainer.innerHTML = `
+        <p class="total-amount">${total}</p>
+    `
     console.log(total)
 }
 
