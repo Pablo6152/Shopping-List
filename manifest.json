@@ -1,0 +1,9 @@
+{
+    "name": "Shopping list",
+    "short_name": "Shopping list",
+    "start_url": "/",
+    "background_color": "#FFDCB5",
+    "theme_color": "#1E003D",
+    "display": "standalone",
+    "orientation":"portrait"
+}
