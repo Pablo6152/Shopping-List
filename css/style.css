@@ -15,7 +15,7 @@
     /* outline: 1px solid darkred; */
 }
 
-html{
+html, body{
     height: 100%;
 }
 
@@ -25,8 +25,8 @@ body{
 
     font-family: 'Nunito', sans-serif;
     margin: 0;
+    height: 100%;
 }
-
 
 h1, h2, h3, p{
     margin: 0;
@@ -149,6 +149,7 @@ h1, h2, h3, p{
 }
 
 .add-btn-icon, .item-delete-icon{
+    display: block;
     font-size: 2rem;
 }
 
@@ -157,6 +158,12 @@ h1, h2, h3, p{
 }
 .item-delete-icon{
     color: #e6352b;
+    background-color: var(--secondary-color);
+}
+.delete-btn{
+    display: block;
+    border: none;
+    background-color: var(--secondary-color);
 }
 
 .add-container{

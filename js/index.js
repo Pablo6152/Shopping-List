@@ -9,30 +9,50 @@ const itemsList = document.getElementById("items-list")
 const totalContainer = document.getElementById("total-container")
 const deleteBtn = document.getElementById("delete-btn")
 let items = []
+let itemId = 0
+
+
+
 
 itemsList.addEventListener("click", e => {
-    let tmpArray = items.reverse()
-    let newArray = tmpArray.splice(e.target.id, e.target.id)
+    // const removedItem = items.filter((item) => item.id == e.target.id);
+    
+    if(!isNaN(parseInt(e.target.id))){
+        let tmpArray = items
+        let newArray = tmpArray.splice(1, e.target.id)
 
-    items = newArray
-    console.log(items)
-    loadApp()
+        items = newArray
+
+        loadApp()
+    }
+
+    
 })
+
+
 
 function loadApp(){
 
-    const itemsDisplay = items.reverse()
-
+    const itemsDisplay = items
 
     let appData = ""
     let total = 0
     
+    // Added the delete btn to each div instead of a global one
     for (let i = 0; i < itemsDisplay.length; i++) {
         appData += `
 
-            <div id="${i}" class="item">
+            <div class="item">
                 <div class="item-head item-color">
                 <p class="item-name">${itemsDisplay[i].name}</p>
+                
+
+                <button class="delete-btn">
+                    <span id="${itemsDisplay[i].id}" class="material-symbols-outlined item-delete-icon">
+                        delete
+                    </span>
+                </button>
+
                 </div>
                 <div class="item-data">
                     <p class="category">Food</p>
@@ -42,11 +62,10 @@ function loadApp(){
         
        `
     }
-
+    
    
     itemsList.innerHTML = appData
 
-    
 
     for (let i = 0; i < items.length; i++){
         total += items[i].price
@@ -73,15 +92,20 @@ function hideAddWindow(){
 }
 
 function submitItem(){
-
+    
     items.push(
         {
-            name: itemAddName.value,
-            price: parseInt(itemAddPrice.value),
-            date: "01/01/2023"
+            // name: itemAddName.value,
+            // price: parseInt(itemAddPrice.value),
+            name: "eggs",
+            price: 1,
+            date: "01/01/2023",
+            id: itemId
         }
     )
-    
+
+    itemId++
+
     hideAddWindow()
     loadApp()
 
