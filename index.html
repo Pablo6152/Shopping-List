@@ -47,7 +47,11 @@
 
     </div>
 
+
+     <!-- What the user sees -->
     <div class="app" id="app">
+
+        <!-- Navbar -->
         <div class="nav-bar">
             <h1 class="app-title">Shopping list</h1>
             <div class="button-container">
@@ -57,14 +61,12 @@
                         add
                     </span>
                 </button>
-                
             </div>
         </div>
         
         <input type="text" placeholder="Search" class="input input-color search-input">
 
         <div class="total-container" id="total-container">
-            
         </div>
 
         <div id="items-list">
@@ -74,13 +76,13 @@
         
 
     </div>
-    <script>
+    <!-- <script>
         if('serviceWorker' in navigator){
           navigator.serviceWorker.register('/service-worker.js');
         } else {
           console.log("Service worker is not supported");
         }
-      </script>
+      </script> -->
 
     <script type="module" src="./js/index.js"></script>
 </body>

@@ -8,31 +8,55 @@ const itemAddDate = document.getElementById("add-item-date")
 const itemsList = document.getElementById("items-list")
 const totalContainer = document.getElementById("total-container")
 const deleteBtn = document.getElementById("delete-btn")
-let items = []
+let items = [
+    {
+        name: "test0",
+        price: 5,
+        date: "01/01/2023",
+        id: 0
+    },
+    {
+        name: "test1",
+        price: 5,
+        date: "01/01/2023",
+        id: 1
+    },
+    {
+        name: "test2",
+        price: 5,
+        date: "01/01/2023",
+        id: 2
+    },
+    {
+        name: "test3",
+        price: 5,
+        date: "01/01/2023",
+        id: 3
+    },
+]
+let itemsBinContainer = []
+
 let itemId = 0
-
-
-
 
 itemsList.addEventListener("click", e => {
     // const removedItem = items.filter((item) => item.id == e.target.id);
     
     if(!isNaN(parseInt(e.target.id))){
-        let tmpArray = items
-        let newArray = tmpArray.splice(1, e.target.id)
+        let itemsBinBuffer = items.splice(Number(e.target.id), 1)
 
-        items = newArray
+        itemsBinContainer.push(itemsBinBuffer[0])
 
+        //console.log(items)
+        console.log(Number(e.target.id))
+        console.log(itemsBinContainer)
+        
         loadApp()
+    } else {
+        console.log("This is not supposed to happen")
     }
-
-    
 })
 
-
-
 function loadApp(){
-
     const itemsDisplay = items
 
     let appData = ""
@@ -71,9 +95,15 @@ function loadApp(){
         total += items[i].price
     }
 
-    totalContainer.innerHTML = `
-        <p class="total-amount">${total}</p>
+    if(total >= 1){
+        totalContainer.innerHTML = `
+        <p class="total-amount">Total: <span class="total-amt"> ${total}</span></p>
     `
+    } else{
+        totalContainer.innerHTML = `
+        <p class="total-amount hidden-total-amount-div">${total}</p>
+    `
+    }
 
 }
 
@@ -93,9 +123,16 @@ function hideAddWindow(){
 
 function submitItem(){
     
+    // For Development purposes
+    // function GetRandomPrices(max){
+    //     return Math.floor(Math.random() * max)
+    // }
+
     items.push(
         {
-            name: itemAddName.value,
+            // name: itemAddName.value,
+            // price: GetRandomPrices(5),
+            name: itemId,
             price: parseInt(itemAddPrice.value),
             date: "01/01/2023",
             id: itemId
@@ -108,6 +145,9 @@ function submitItem(){
 
 }
 
-
+// For Development purposes
+// for (let i = 0; i < 5; i++){
+//     submitItem()
+// }
 
 loadApp()
