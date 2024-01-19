@@ -234,10 +234,10 @@ h1, h2, h3, p{
     justify-content: center;
 
     /* To be decided */
-    /* position: fixed;
+    position: fixed;
     bottom: 0;
     left: 0;
-    right: 0; */
+    right: 0;
 
     border-radius: 9px;
     background-color: rgba(0,0,0,.4);
@@ -253,4 +253,7 @@ h1, h2, h3, p{
 }
 .total-amt{
     color: var(--secondary-accent-color);
+}
+.items-list{
+    margin-bottom: 1em;
 }

@@ -9,38 +9,39 @@ const itemsList = document.getElementById("items-list")
 const totalContainer = document.getElementById("total-container")
 const deleteBtn = document.getElementById("delete-btn")
 let items = [
-    {
-        name: "test0",
-        price: 5,
-        date: "01/01/2023",
-        id: 0
-    },
-    {
-        name: "test1",
-        price: 10,
-        date: "01/01/2023",
-        id: 1
-    },
-    {
-        name: "test2",
-        price: 15,
-        date: "01/01/2023",
-        id: 2
-    },
-    {
-        name: "test3",
-        price: 20,
-        date: "01/01/2023",
-        id: 3
-    },
+    // {
+    //     name: "test0",
+    //     price: 5,
+    //     date: "01/01/2023",
+    //     id: 0
+    // },
+    // {
+    //     name: "test1",
+    //     price: 10,
+    //     date: "01/01/2023",
+    //     id: 1
+    // },
+    // {
+    //     name: "test2",
+    //     price: 15,
+    //     date: "01/01/2023",
+    //     id: 2
+    // },
+    // {
+    //     name: "test3",
+    //     price: 20,
+    //     date: "01/01/2023",
+    //     id: 3
+    // },
 ]
 
 
 
 let itemsBinContainer = []
-let itemId = 0
 
 itemsList.addEventListener("click", e => {
+
+    console.log(items)
 
     let idSelected = parseInt(e.target.id)
     
@@ -56,14 +57,10 @@ itemsList.addEventListener("click", e => {
         }
 
         console.log(items)
-        // console.log(Number(e.target.id))
-        // console.log(items)
-        
 
         loadApp()
-    } else {
-        console.log("This is not supposed to happen")
     }
+
 })
 
 function loadApp(){
@@ -107,7 +104,7 @@ function loadApp(){
 
     if(total >= 1){
         totalContainer.innerHTML = `
-        <p class="total-amount">Total: <span class="total-amt"> ${total}</span></p>
+        <p class="total-amount"><span class="total-amt">$ ${total}</span></p>
     `
     } else{
         totalContainer.innerHTML = `
@@ -140,24 +137,25 @@ function submitItem(){
 
     items.push(
         {
-            // name: itemAddName.value,
+            // name: `Test subject #${itemId}`,
             // price: GetRandomPrices(5),
-            name: itemId,
+
+            name: itemAddName.value,
             price: parseInt(itemAddPrice.value),
             date: "01/01/2023",
-            id: itemId
+            id: items.length
         }
     )
+    console.log(items)
 
-    itemId++
     hideAddWindow()
     loadApp()
 
 }
 
-// For Development purposes
-// for (let i = 0; i < 5; i++){
-//     submitItem()
-// }
+    // For Development purposes
+    // for (let i = 0; i < 5; i++){
+    //     submitItem()
+    // }
 
 loadApp()
