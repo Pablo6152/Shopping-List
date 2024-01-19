@@ -14,10 +14,16 @@
     
     /* outline: 1px solid darkred; */
 }
+html{
+    margin-bottom: 100px;
+}
 
 html, body{
     height: 100%;
 }
+
+
+
 
 body{
     background-color: var(--primary-color);
@@ -26,6 +32,7 @@ body{
     font-family: 'Nunito', sans-serif;
     margin: 0;
     height: 100%;
+    
 }
 
 h1, h2, h3, p{
@@ -197,13 +204,15 @@ h1, h2, h3, p{
 
     color: var(--alt-color);
 }
-
-.back-btn{
+.dialog-btn{
     background-color: rgba(0,0,0,0);
     color: var(--alt-color);
     border: none;
-
     font-size: 1rem;
+}
+.back-btn{
+
+    
 }
 
 
