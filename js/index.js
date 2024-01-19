@@ -95,10 +95,8 @@ function submitItem(){
     
     items.push(
         {
-            // name: itemAddName.value,
-            // price: parseInt(itemAddPrice.value),
-            name: "eggs",
-            price: 1,
+            name: itemAddName.value,
+            price: parseInt(itemAddPrice.value),
             date: "01/01/2023",
             id: itemId
         }
