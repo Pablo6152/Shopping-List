@@ -17,39 +17,49 @@ let items = [
     },
     {
         name: "test1",
-        price: 5,
+        price: 10,
         date: "01/01/2023",
         id: 1
     },
     {
         name: "test2",
-        price: 5,
+        price: 15,
         date: "01/01/2023",
         id: 2
     },
     {
         name: "test3",
-        price: 5,
+        price: 20,
         date: "01/01/2023",
         id: 3
     },
 ]
-let itemsBinContainer = []
 
+
+
+let itemsBinContainer = []
 let itemId = 0
 
 itemsList.addEventListener("click", e => {
-    // const removedItem = items.filter((item) => item.id == e.target.id);
+
+    let idSelected = parseInt(e.target.id)
     
     if(!isNaN(parseInt(e.target.id))){
-        let itemsBinBuffer = items.splice(Number(e.target.id), 1)
-
+        let itemsBinBuffer = []
+        itemsBinBuffer = items.splice(parseInt(e.target.id), 1)
+        console.log(items.length)
         itemsBinContainer.push(itemsBinBuffer[0])
 
-        //console.log(items)
-        console.log(Number(e.target.id))
-        console.log(itemsBinContainer)
+        for (let i = idSelected; i < items.length; i++) { 
+            console.log(items[i].id)
+            items[i].id--
+        }
+
+        console.log(items)
+        // console.log(Number(e.target.id))
+        // console.log(items)
         
+
         loadApp()
     } else {
         console.log("This is not supposed to happen")
