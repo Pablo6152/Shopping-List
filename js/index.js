@@ -1,5 +1,10 @@
+import { toggleTheme, themeBtn, loadTheme } from "./theme.js";
+
 const actionAdd = document.getElementById("action-add")
+const actionMenu = document.getElementById("action-menu")
+const closeBtn = document.getElementById("close-btn")
 const addContainer = document.getElementById("add-container")
+const menuContainer = document.getElementById("menu-container")
 const backButton = document.getElementById("back-btn")
 const addItem = document.getElementById("add-item")
 const itemAddName = document.getElementById("add-item-name")
@@ -8,6 +13,8 @@ const itemAddDate = document.getElementById("add-item-date")
 const itemsList = document.getElementById("items-list")
 const totalContainer = document.getElementById("total-container")
 const deleteBtn = document.getElementById("delete-btn")
+themeBtn.addEventListener("click", toggleTheme)
+
 let items = [
     // {
     //     name: "test0",
@@ -34,36 +41,27 @@ let items = [
     //     id: 3
     // },
 ]
-
-
-
 let itemsBinContainer = []
 
 itemsList.addEventListener("click", e => {
-
-    console.log(items)
-
     let idSelected = parseInt(e.target.id)
     
     if(!isNaN(parseInt(e.target.id))){
         let itemsBinBuffer = []
         itemsBinBuffer = items.splice(parseInt(e.target.id), 1)
-        console.log(items.length)
+
         itemsBinContainer.push(itemsBinBuffer[0])
 
         for (let i = idSelected; i < items.length; i++) { 
-            console.log(items[i].id)
             items[i].id--
         }
 
-        console.log(items)
-
-        loadApp()
+        renderApp()
     }
 
 })
 
-function loadApp(){
+function renderApp(){
     const itemsDisplay = items
 
     let appData = ""
@@ -72,7 +70,6 @@ function loadApp(){
     // Added the delete btn to each div instead of a global one
     for (let i = 0; i < itemsDisplay.length; i++) {
         appData += `
-
             <div class="item">
                 <div class="item-head item-color">
                 <p class="item-name">${itemsDisplay[i].name}</p>
@@ -90,13 +87,10 @@ function loadApp(){
                     <p class="price">$ ${itemsDisplay[i].price}</p>
                 </div>
             </div>
-        
        `
     }
-    
-   
-    itemsList.innerHTML = appData
 
+    itemsList.innerHTML = appData
 
     for (let i = 0; i < items.length; i++){
         total += items[i].price
@@ -108,19 +102,34 @@ function loadApp(){
     `
     } else{
         totalContainer.innerHTML = `
-        <p class="total-amount hidden-total-amount-div">${total}</p>
+        <p class="total-amount hidden-total-amount-div"></p>
     `
     }
 
 }
 
-actionAdd.addEventListener("click", showAddWindow)
+// Buttons, to be exported
+// actionAdd.addEventListener("click", showAddWindow)
 backButton.addEventListener("click", hideAddWindow)
 addItem.addEventListener("click", submitItem)
 
+// New menu btn
+actionMenu.addEventListener("click", showMenuWindow)
+closeBtn.addEventListener("click", hideMenuWindow)
+
+function showMenuWindow(){
+    menuContainer.classList.remove("hide-window")
+    menuContainer.classList.add("show-window")
+}
+
+function hideMenuWindow(){
+    menuContainer.classList.add("hide-window")
+    menuContainer.classList.remove("show-window")
+}
+
 function showAddWindow(){
-        addContainer.classList.remove("hide-window")
-        addContainer.classList.add("show-window")
+    addContainer.classList.remove("hide-window")
+    addContainer.classList.add("show-window")
 }
 
 function hideAddWindow(){
@@ -131,31 +140,33 @@ function hideAddWindow(){
 function submitItem(){
     
     // For Development purposes
-    // function GetRandomPrices(max){
-    //     return Math.floor(Math.random() * max)
-    // }
+    function GetRandomPrices(max){
+        return Math.floor(Math.random() * max)
+    }
 
     items.push(
         {
-            // name: `Test subject #${itemId}`,
-            // price: GetRandomPrices(5),
+            name: `Test subject #${GetRandomPrices(5)}`,
+            price: GetRandomPrices(50),
 
-            name: itemAddName.value,
-            price: parseInt(itemAddPrice.value),
+            // name: itemAddName.value,
+            // price: parseInt(itemAddPrice.value),
             date: "01/01/2023",
             id: items.length
         }
     )
-    console.log(items)
 
     hideAddWindow()
-    loadApp()
+    renderApp()
 
 }
 
-    // For Development purposes
-    // for (let i = 0; i < 5; i++){
-    //     submitItem()
-    // }
+    // For Development purposes, renders the desired amount of dummy items
+    for (let i = 0; i < 5; i++){
+        submitItem()
+    }
 
-loadApp()
+
+
+loadTheme()
+renderApp()

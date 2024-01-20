@@ -15,8 +15,7 @@
 </head>
 <body>
 
-    <div class="add-container hide-window" id="add-container">
-        
+    <div class="add-container hide-window" id="add-container">     
         <div class="add-event" id="add-event-window">
             <div class="dialogNavbar">
                 <button id="back-btn" class="back-btn dialog-btn">Back</button>
@@ -44,21 +43,42 @@
                 <button>Save draft</button>
             </div> -->
         </div>
+    </div>
+
+    <div class="menu-container hide-window" id="menu-container">
+        
+        <div class="menu-title-container app-width">
+            <h1 class="app-title">Shopping list</h1>
+            <span id="close-btn" class="material-symbols-outlined close-btn">
+                close
+            </span>
+        </div>
+        <div class="user-opt"></div>
+        <div class="settings-opt"></div>
 
     </div>
 
 
      <!-- What the user sees -->
-    <div class="app" id="app">
+    <div class="app app-width" id="app">
 
         <!-- Navbar -->
         <div class="nav-bar">
             <h1 class="app-title">Shopping list</h1>
-            <div class="button-container">
-                
-                <button id="action-add" class="nav-btn add-btn">
-                    <span class="material-symbols-outlined add-btn-icon">
+            <div class="btn-container">     
+                <!-- <button id="action-add" class="nav-btn add-btn">
+                    <span class="material-symbols-outlined add-btn-icon btn-icon">
                         add
+                    </span>
+                </button> -->
+                <button id="theme-btn" class="nav-btn add-btn">
+                    <span class="material-symbols-outlined add-btn-icon btn-icon">
+                        add
+                    </span>
+                </button>
+                <button id="action-menu" class="nav-btn menu-btn">
+                    <span class="material-symbols-outlined menu-btn-icon btn-icon">
+                        menu
                     </span>
                 </button>
             </div>

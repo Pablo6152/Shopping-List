@@ -22,17 +22,13 @@ html, body{
     height: 100%;
 }
 
-
-
-
 body{
     background-color: var(--primary-color);
-    color: #fff;
+    color: var(--text-color);
 
     font-family: 'Nunito', sans-serif;
     margin: 0;
     height: 100%;
-    
 }
 
 h1, h2, h3, p{
@@ -67,12 +63,13 @@ h1, h2, h3, p{
 
 /* Layout */
 .app{
-    width: 90%;
-    margin: 0 auto;
 
     display: flex;
     flex-direction: column;
-
+}
+.app-width{
+    width: 90%;
+    margin: 0 auto;
 }
 
 .input{
@@ -153,15 +150,28 @@ h1, h2, h3, p{
     background-color: var(--primary-color);
     border: none;
     cursor: pointer;
+    color: var(--text-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1rem;
+}
+
+.btn-container{
+    display: flex;
+}
+.btn-icon{
+    font-size: 2.3rem;
 }
 
 .add-btn-icon, .item-delete-icon{
-    display: block;
-    font-size: 2rem;
+    
 }
 
 .add-btn-icon{
-    color: var(--text-color);
+    
 }
 .item-delete-icon{
     color: #e6352b;
@@ -211,7 +221,6 @@ h1, h2, h3, p{
     font-size: 1rem;
 }
 .back-btn{
-
     
 }
 
@@ -235,6 +244,30 @@ h1, h2, h3, p{
     color: var(--text-color);
 }
 
+/* Menu window */
+.menu-container{
+    background-color: var(--primary-color);
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    height: 100%;
+    width: 100%;
+
+    margin: 1em 0;
+
+}
+.menu-title-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.close-btn{
+    font-size: 2.3rem;
+}
+
 .price{
     color: var(--alt-color);
 }
@@ -243,13 +276,9 @@ h1, h2, h3, p{
     justify-content: center;
 
     /* To be decided */
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
 
     border-radius: 9px;
-    background-color: rgba(0,0,0,.4);
+    background-color: var(--secondary-color);
 
     padding: 1em;
     margin-top: 1em;
