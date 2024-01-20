@@ -255,19 +255,51 @@ h1, h2, h3, p{
     position: fixed;
     height: 100%;
     width: 100%;
+}
+.close-btn{
+    font-size: 2.3rem;
+}
+.menu-btn{
+    display: inline-block;
+    text-align: left;
+    border: none;
+    border-radius: 13px;
+    cursor: pointer;
 
-    margin: 1em 0;
-
+    padding: 1em .4em;
+    margin-bottom: 1em;
+    margin-top: .7em;
+    font-size: 1.2rem;
+}
+.menu-btn-color{
+    background-color: var(--secondary-color);
+    color: var(--text-color);
 }
 .menu-title-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 10%;
 }
-.close-btn{
-    font-size: 2.3rem;
+.user-opt-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: left;
+    height: 60%;
+    border-top: 1px solid var(--text-color);
+}
+.settings-opt{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: left;
+    height: 30%;
+    border-top: 1px solid var(--text-color);
 }
 
+
+/**/
 .price{
     color: var(--alt-color);
 }
