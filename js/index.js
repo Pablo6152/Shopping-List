@@ -1,5 +1,4 @@
-import { toggleTheme, themeBtn, loadTheme } from "./theme.js";
-
+import { loadTheme } from "./theme.js";
 
 const actionAdd = document.getElementById("action-add")
 const actionMenu = document.getElementById("action-menu")
@@ -13,35 +12,9 @@ const itemAddPrice = document.getElementById("add-item-price")
 const itemAddDate = document.getElementById("add-item-date")
 const itemsList = document.getElementById("items-list")
 const totalContainer = document.getElementById("total-container")
-const deleteBtn = document.getElementById("delete-btn")
-themeBtn.addEventListener("click", toggleTheme)
 
-let items = [
-    // {
-    //     name: "test0",
-    //     price: 5,
-    //     date: "01/01/2023",
-    //     id: 0
-    // },
-    // {
-    //     name: "test1",
-    //     price: 10,
-    //     date: "01/01/2023",
-    //     id: 1
-    // },
-    // {
-    //     name: "test2",
-    //     price: 15,
-    //     date: "01/01/2023",
-    //     id: 2
-    // },
-    // {
-    //     name: "test3",
-    //     price: 20,
-    //     date: "01/01/2023",
-    //     id: 3
-    // },
-]
+
+let items = []
 let itemsBinContainer = []
 
 itemsList.addEventListener("click", e => {
@@ -65,7 +38,6 @@ itemsList.addEventListener("click", e => {
 
 function renderApp(){
     loadItems()
-    console.log(items)
     const itemsDisplay = items
 
     let appData = ""
@@ -77,7 +49,6 @@ function renderApp(){
             <div class="item">
                 <div class="item-head item-color">
                 <p class="item-name">${itemsDisplay[i].name}</p>
-                
 
                 <button class="delete-btn">
                     <span id="${itemsDisplay[i].id}" class="material-symbols-outlined item-delete-icon">
@@ -109,7 +80,6 @@ function renderApp(){
         <p class="total-amount hidden-total-amount-div"></p>
     `
     }
-
 
 }
 
@@ -143,17 +113,8 @@ function hideAddWindow(){
 }
 
 function submitItem(){
-    
-    // For Development purposes
-    // function GetRandomPrices(max){
-    //     return Math.floor(Math.random() * max)
-    // }
-
     items.push(
         {
-            // name: `Test subject #${GetRandomPrices(5)}`,
-            // price: GetRandomPrices(50),
-
             name: itemAddName.value,
             price: parseInt(itemAddPrice.value),
             date: "01/01/2023",
@@ -166,22 +127,21 @@ function submitItem(){
     renderApp()
 
 }
-
-    // For Development purposes, renders the desired amount of dummy items
-    // for (let i = 0; i < 5; i++){
-    //     submitItem()
-    // }
-
-
     // Save to local storage function
     function saveItems(){
         localStorage.setItem("itemsArray", JSON.stringify(items))
     }
     function loadItems(){
-        const loadedData = localStorage.getItem("itemsArray")
-        items = JSON.parse(loadedData)
-    }
+        let loadedData = []
 
+        if (localStorage.getItem("itemsArray") == null || loadedData.length < 0) {
+            console.log("Empty")
+        } else { 
+            loadedData = localStorage.getItem("itemsArray")
+            items = JSON.parse(loadedData)
+            console.log("Not empty") 
+        }
+    }
 
 
 loadTheme()

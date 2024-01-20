@@ -9,6 +9,7 @@ function loadTheme(){
     }
 }
 
+themeBtn.addEventListener("click", toggleTheme)
 // Dark mode
 function getTheme(theme) {
     let root = document.documentElement;
