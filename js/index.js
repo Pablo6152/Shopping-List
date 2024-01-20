@@ -1,5 +1,6 @@
 import { toggleTheme, themeBtn, loadTheme } from "./theme.js";
 
+
 const actionAdd = document.getElementById("action-add")
 const actionMenu = document.getElementById("action-menu")
 const closeBtn = document.getElementById("close-btn")
@@ -56,12 +57,15 @@ itemsList.addEventListener("click", e => {
             items[i].id--
         }
 
+        saveItems()
         renderApp()
     }
 
 })
 
 function renderApp(){
+    loadItems()
+    console.log(items)
     const itemsDisplay = items
 
     let appData = ""
@@ -106,10 +110,11 @@ function renderApp(){
     `
     }
 
+
 }
 
 // Buttons, to be exported
-// actionAdd.addEventListener("click", showAddWindow)
+actionAdd.addEventListener("click", showAddWindow)
 backButton.addEventListener("click", hideAddWindow)
 addItem.addEventListener("click", submitItem)
 
@@ -140,30 +145,41 @@ function hideAddWindow(){
 function submitItem(){
     
     // For Development purposes
-    function GetRandomPrices(max){
-        return Math.floor(Math.random() * max)
-    }
+    // function GetRandomPrices(max){
+    //     return Math.floor(Math.random() * max)
+    // }
 
     items.push(
         {
-            name: `Test subject #${GetRandomPrices(5)}`,
-            price: GetRandomPrices(50),
+            // name: `Test subject #${GetRandomPrices(5)}`,
+            // price: GetRandomPrices(50),
 
-            // name: itemAddName.value,
-            // price: parseInt(itemAddPrice.value),
+            name: itemAddName.value,
+            price: parseInt(itemAddPrice.value),
             date: "01/01/2023",
             id: items.length
         }
     )
 
     hideAddWindow()
+    saveItems()
     renderApp()
 
 }
 
     // For Development purposes, renders the desired amount of dummy items
-    for (let i = 0; i < 5; i++){
-        submitItem()
+    // for (let i = 0; i < 5; i++){
+    //     submitItem()
+    // }
+
+
+    // Save to local storage function
+    function saveItems(){
+        localStorage.setItem("itemsArray", JSON.stringify(items))
+    }
+    function loadItems(){
+        const loadedData = localStorage.getItem("itemsArray")
+        items = JSON.parse(loadedData)
     }
 
 
