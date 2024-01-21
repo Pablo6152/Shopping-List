@@ -7,6 +7,7 @@
     --primary-accent-color: #007aff;
     --secondary-accent-color: #35c759;
     --alt-color: #e1b53f;
+    --tertiary-accent-color: #e6352b;
 }
 
 *{
@@ -174,7 +175,7 @@ h1, h2, h3, p{
     
 }
 .item-delete-icon{
-    color: #e6352b;
+    color: var(--tertiary-accent-color);
     background-color: var(--secondary-color);
 }
 .item-undo-icon{
@@ -265,20 +266,49 @@ h1, h2, h3, p{
     font-size: 2.3rem;
 }
 .menu-btn{
-    display: inline-block;
-    text-align: left;
+    display: flex;
+    align-content: center;
+    text-align: center;
+
     border: none;
-    border-radius: 9px;
+    border-radius: 12px;
     cursor: pointer;
 
     padding: 1em .4em;
     margin-bottom: 1em;
-    margin-top: .7em;
-    font-size: 1.2rem;
+    margin-top: 1em;
 }
 .menu-btn-color{
     background-color: var(--secondary-color);
     color: var(--text-color);
+}
+.menu-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-size: 2rem;
+
+    margin-left: .5em;
+    margin-right: .5em;
+}
+.menu-btn-name{
+    display: block;
+    align-self: center;
+    font-size: 1.3rem;
+}
+.menu-home-icon{
+    color: var(--primary-accent-color);
+}
+.menu-favorite-icon{
+    color: rgb(255, 25, 217);
+}
+.menu-budget-icon{
+    color: var(--secondary-accent-color);
+}
+.menu-bin-icon{
+    color: var(--tertiary-accent-color);
 }
 .menu-title-container{
     display: flex;
