@@ -1,10 +1,12 @@
-import { itemsList, itemBinSectionContainer } from "./Containers.js"
+import { itemsList, itemsBinList, itemBinSectionContainer } from "./Containers.js"
 import { saveItems, items } from "./items.js"
 import { renderApp } from "./index.js"
 
-let itemsBinContainer = []
+let itemsBin = []
 
 itemsList.addEventListener("click", itemSelector)
+itemsBinList.addEventListener("click", itemBinSelector)
+
 
 function itemSelector(e){
     let idSelected = parseInt(e.target.id)
@@ -13,19 +15,77 @@ function itemSelector(e){
         let itemsBinBuffer = []
         itemsBinBuffer = items.splice(parseInt(e.target.id), 1)
 
-        itemsBinContainer.push(itemsBinBuffer[0])
+        itemsBin.push(itemsBinBuffer[0])
 
         for (let i = idSelected; i < items.length; i++) { 
             items[i].id--
         }
 
         saveItems()
+        saveItemsBin()
         renderApp()
     }
 }
 
+function itemBinSelector(e){
+    let idSelected = parseInt(e.target.id)
+    
+    if(!isNaN(parseInt(e.target.id))){
+        let itemsBinBuffer = []
+        itemsBinBuffer = itemsBin.splice(parseInt(e.target.id), 1)
+
+        items.push(itemsBinBuffer[0])
+
+        for (let i = idSelected; i < itemsBin.length; i++) { 
+            itemsBin[i].id--
+        }
+
+        saveItems()
+        saveItemsBin()
+        renderApp()
+    }
+}
+
+function saveItemsBin(){
+    localStorage.setItem("itemsBinArray", JSON.stringify(itemsBin))
+}
+
+function loadItemsBin(){
+    let loadedData = []
+    if (localStorage.getItem("itemsBinArray") == null || loadedData.length < 0) {
+    } else { 
+        loadedData = localStorage.getItem("itemsBinArray")
+        itemsBin = JSON.parse(loadedData)
+    }
+}
+
 function renderItemsBin(){
-    console.log("Items Bin summoned")
+    loadItemsBin()
+
+    const itemsBinDisplay = itemsBin
+    let appData = ""
+    for (let i = 0; i < itemsBinDisplay.length; i++) {
+        appData += `
+            <div class="item">
+                <div class="item-head item-color">
+                <p class="item-name">${itemsBinDisplay[i].name}</p>
+
+                <button class="delete-btn">
+                    <span id="${itemsBinDisplay[i].id}" class="material-symbols-outlined item-undo-icon">
+                        undo
+                    </span>
+                </button>
+
+                </div>
+                <div class="item-data">
+                    <p class="category">Food</p>
+                    <p class="price">$ ${itemsBinDisplay[i].price}</p>
+                </div>
+            </div>
+       `
+    }
+       itemsBinList.innerHTML = appData
+
 }
 
 export { itemSelector, renderItemsBin }
