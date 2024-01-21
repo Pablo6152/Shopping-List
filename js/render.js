@@ -22,6 +22,4 @@ function render(){
 
 }
 
-//
-
 export { render }

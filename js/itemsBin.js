@@ -14,16 +14,22 @@ function itemSelector(e){
     if(!isNaN(parseInt(e.target.id))){
         let itemsBinBuffer = []
         itemsBinBuffer = items.splice(parseInt(e.target.id), 1)
+        
+        for (let i = 0; i < itemsBinBuffer.length; i++) {
+            itemsBinBuffer[i].id = itemsBin.length
+        }
 
         itemsBin.push(itemsBinBuffer[0])
 
         for (let i = idSelected; i < items.length; i++) { 
             items[i].id--
         }
+        
 
         saveItems()
         saveItemsBin()
         renderApp()
+
     }
 }
 
@@ -33,12 +39,17 @@ function itemBinSelector(e){
     if(!isNaN(parseInt(e.target.id))){
         let itemsBinBuffer = []
         itemsBinBuffer = itemsBin.splice(parseInt(e.target.id), 1)
+        
+        for (let i = 0; i < itemsBinBuffer.length; i++) {
+            itemsBinBuffer[i].id = items.length
+        }
 
         items.push(itemsBinBuffer[0])
 
         for (let i = idSelected; i < itemsBin.length; i++) { 
             itemsBin[i].id--
         }
+
 
         saveItems()
         saveItemsBin()
@@ -88,4 +99,4 @@ function renderItemsBin(){
 
 }
 
-export { itemSelector, renderItemsBin }
+export { itemSelector, renderItemsBin, itemsBin }

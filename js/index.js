@@ -1,5 +1,7 @@
 import { loadTheme } from "./theme.js";
 import { render } from "./render.js"
+import { items } from './items.js';
+import { itemsBin } from './itemsBin.js';
 
 const currentPage = {
     aInternal: 0,
@@ -28,6 +30,9 @@ currentPage.registerListener(function(val) {
 
 function renderApp(){
     render()
+
+    console.log(items)
+    console.log(itemsBin)
 }
 
 loadTheme()
