@@ -56,10 +56,10 @@
     </div>
 
         <div class="user-opt-container app-width">
-            <button class="menu-btn menu-btn-color">Home</button>
+            <button id="home-access-btn" class="menu-btn menu-btn-color">Home</button>
             <button class="menu-btn menu-btn-color">Favorites</button>
             <button class="menu-btn menu-btn-color">Budget</button>
-            <button class="menu-btn menu-btn-color">History</button>
+            <button id="trash-bin-access-btn" class="menu-btn menu-btn-color">Trash bin</button>
         </div>
 
         <div class="settings-opt app-width">
@@ -75,8 +75,8 @@
 
         <!-- Navbar -->
         <div class="nav-bar">
-            <h1 class="app-title">Shopping list</h1>
-            <div class="btn-container">     
+            <h1 id="section-title" class="section-title">Shopping list</h1>
+            <div class="btn-container">
                 <!-- <button id="action-add" class="nav-btn add-btn">
                     <span class="material-symbols-outlined add-btn-icon btn-icon">
                         add
@@ -93,19 +93,21 @@
                     </span>
                 </button>
             </div>
+            
         </div>
         
         <input type="text" placeholder="Search" class="input input-color search-input">
 
-        <div class="total-container" id="total-container">
-
+        <div id="items-section-container" class="">
+            <div class="total-container" id="total-container">
+            </div>
+            <div id="items-list" class="items-list">
+            </div>
         </div>
 
-        <div id="items-list" class="items-list">
-
+        <div id="items-bin-section-container" class="">
+            <p>This is the Recycle bin</p>
         </div>
-
-        
 
     </div>
     <!-- <script>
