@@ -1,12 +1,10 @@
-import { itemsList, itemsBinList, itemBinSectionContainer } from "./Containers.js"
+import { itemsList, itemsBinList } from "./Containers.js"
 import { saveItems, items } from "./items.js"
 import { renderApp } from "./index.js"
-
 let itemsBin = []
 
 itemsList.addEventListener("click", itemSelector)
 itemsBinList.addEventListener("click", itemBinSelector)
-
 
 function itemSelector(e){
     let idSelected = parseInt(e.target.id)
@@ -24,12 +22,10 @@ function itemSelector(e){
         for (let i = idSelected; i < items.length; i++) { 
             items[i].id--
         }
-        
 
         saveItems()
         saveItemsBin()
         renderApp()
-
     }
 }
 
@@ -49,7 +45,6 @@ function itemBinSelector(e){
         for (let i = idSelected; i < itemsBin.length; i++) { 
             itemsBin[i].id--
         }
-
 
         saveItems()
         saveItemsBin()

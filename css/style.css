@@ -50,12 +50,17 @@ h1, h2, h3, p{
     align-items: center;
 
     margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 /* Typography */
 
 .section-title{
     
+}
+
+.item{
+    margin: 1em 0;
 }
 
 .item-name{
@@ -112,7 +117,6 @@ h1, h2, h3, p{
 }
 
 .search-input{
-    margin-top: 1em;
     padding: .5em;
     font-size: 1.2rem;
 }
@@ -120,7 +124,6 @@ h1, h2, h3, p{
 .item{
     display: flex;
     flex-direction: column;
-    margin-top: 1em;
     padding: 1em;
 
     background-color: var(--secondary-color);
@@ -296,7 +299,9 @@ h1, h2, h3, p{
 .menu-btn-name{
     display: block;
     align-self: center;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+
+    letter-spacing: 1px;
 }
 .menu-home-icon{
     color: var(--primary-accent-color);
@@ -361,4 +366,26 @@ h1, h2, h3, p{
 }
 .items-list{
     margin-bottom: 1em;
+}
+.settings-list{
+    display: flex;
+    flex-direction: column;
+}
+.setting-btn{
+    display: flex;
+    align-content: center;
+    text-align: center;
+    font-size: 1.3rem;
+
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    padding: 1em .4em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+.settings-btn-color{
+    background-color: var(--secondary-color);
+    color: var(--text-color);
 }

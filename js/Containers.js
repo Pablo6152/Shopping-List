@@ -7,9 +7,12 @@ const sectionTitle = document.getElementById("section-title")
 
 // Section containers
 const itemSectionContainer = document.getElementById("items-section-container")
+const favoriteSectionContainer = document.getElementById("favorite-section-container")
+const budgetSectionContainer = document.getElementById("budget-section-container")
 const itemBinSectionContainer = document.getElementById("items-bin-section-container")
 
-
+const settingsSectionContainer = document.getElementById("settings-section-container")
+const eraseSectionContainer = document.getElementById("erase-section-container")
 
 
 export { 
@@ -17,9 +20,13 @@ export {
     menuContainer, 
     itemsList, 
     totalContainer,
+    itemsBinList,
+    sectionTitle,
     itemSectionContainer,
     itemBinSectionContainer,
-    itemsBinList,
-    sectionTitle
+    favoriteSectionContainer,
+    budgetSectionContainer,
+    settingsSectionContainer,
+    eraseSectionContainer
     
 }

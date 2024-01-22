@@ -1,8 +1,7 @@
 import { itemAddName, itemAddPrice, itemAddDate } from "./input.js"
 import { hideAddWindow } from "./Buttons.js"
-import { totalContainer, itemsList, itemSectionContainer } from "./Containers.js"
+import { totalContainer, itemsList } from "./Containers.js"
 import { renderApp } from "./index.js"
-
 
 let items = []
 

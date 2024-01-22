@@ -9,10 +9,18 @@ const closeBtn = document.getElementById("close-btn")
 const backBtn = document.getElementById("back-btn")
 const addItemBtn = document.getElementById("add-item")
 
+// New Menu buttons
 const homeAccessBtn = document.getElementById("home-access-btn")
+const favoriteAccessBtn = document.getElementById("favorite-access-btn")
+const budgetAccessBtn = document.getElementById("budget-access-btn")
 const trashBinAccessBtn = document.getElementById("trash-bin-access-btn")
 
-// Buttons, to be exported
+const settingsBinAccessBtn = document.getElementById("settings-access-btn")
+const eraseAccessBtn = document.getElementById("erase-access-btn")
+
+
+
+// Nav buttons
 navAddBtn.addEventListener("click", showAddWindow)
 backBtn.addEventListener("click", hideAddWindow)
 addItemBtn.addEventListener("click", submitItem)
@@ -24,14 +32,33 @@ closeBtn.addEventListener("click", hideMenuWindow)
 // Switch app sections
 homeAccessBtn.addEventListener("click", () => {
     currentPage.a = 0
-    renderApp()
+    hideMenuWindow()
+})
+favoriteAccessBtn.addEventListener("click", () => {
+    currentPage.a = 1
+    hideMenuWindow()
+})
+budgetAccessBtn.addEventListener("click", () => {
+    currentPage.a = 2
     hideMenuWindow()
 })
 trashBinAccessBtn.addEventListener("click", () => {
-    currentPage.a = 1
-    renderApp()
+    currentPage.a = 3
     hideMenuWindow()
 })
+
+settingsBinAccessBtn.addEventListener("click", () => {
+    currentPage.a = 4
+    hideMenuWindow()
+})
+
+eraseAccessBtn.addEventListener("click", () => {
+    currentPage.a = 5
+    console.log(currentPage.a)
+    hideMenuWindow()
+})
+
+
 
 function showMenuWindow(){
     menuContainer.classList.remove("hide-window")

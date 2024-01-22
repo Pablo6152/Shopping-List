@@ -62,13 +62,13 @@
                 </span>
                 <p class="menu-btn-name">Home</p>
             </button>
-            <button class="menu-btn menu-btn-color">
+            <button id="favorite-access-btn" class="menu-btn menu-btn-color">
                 <span class="material-symbols-outlined menu-icon menu-favorite-icon">
                     favorite
                 </span>
                 <p class="menu-btn-name">Favorites</p>
             </button>
-            <button class="menu-btn menu-btn-color">
+            <button id="budget-access-btn" class="menu-btn menu-btn-color">
                 <span class="material-symbols-outlined menu-icon menu-budget-icon">
                     attach_money
                 </span>
@@ -82,14 +82,15 @@
             </button>
         </div>
 
-        <div class="settings-opt app-width">
-            <button id="theme-btn" class="menu-btn menu-btn-color">
+        <div id="" class="settings-opt app-width">
+            <button id="settings-access-btn" class="menu-btn menu-btn-color">
                 <span class="material-symbols-outlined menu-icon">
                     settings
                 </span>
                 <p class="menu-btn-name">Settings</p>
             </button>
-            <button class="menu-btn menu-btn-color menu-bin-icon">
+            
+            <button id="erase-access-btn" class="menu-btn menu-btn-color menu-bin-icon">
                 <span class="material-symbols-outlined menu-icon">
                     close
                 </span>
@@ -98,7 +99,6 @@
         </div>
 
     </div>
-
 
      <!-- What the user sees -->
     <div class="app app-width" id="app">
@@ -126,7 +126,7 @@
             
         </div>
         
-        <input type="text" placeholder="Search" class="input input-color search-input">
+        <input type="text" placeholder="Search" class="input input-color search-input" id="app-search" name="app-search">
 
         <div id="items-section-container" class="">
             <div class="total-container" id="total-container">
@@ -135,8 +135,34 @@
             </div>
         </div>
 
+        <div id="favorite-section-container" class="">
+            <div id="favorite-list" class="items-list">
+                <p>Favorites</p>
+            </div>
+        </div>
+
+        <div id="budget-section-container" class="">
+            <div id="budget-list" class="items-list">
+                <p>budget</p>
+            </div>
+        </div>
+
         <div id="items-bin-section-container" class="">
             <div id="items-bin-list" class="items-list">
+            </div>
+        </div>
+
+        <div id="settings-section-container" class="">
+            <div id="settings-list" class="settings-list">
+                <button id="theme-btn" class="setting-btn settings-btn-color">Change Theme</button>
+                <button id="" class="setting-btn settings-btn-color">Test</button>
+                <button id="" class="setting-btn settings-btn-color">Test</button>
+            </div>
+        </div>
+
+        <div id="erase-section-container" class="">
+            <div id="erase-list" class="items-list">
+                <p>erase</p>
             </div>
         </div>
 
