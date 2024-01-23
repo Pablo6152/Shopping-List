@@ -1,6 +1,6 @@
 const addContainer = document.getElementById("add-container")
 const menuContainer = document.getElementById("menu-container")
-const itemsList = document.getElementById("items-list")
+const itemsList = document.getElementById("items-list-event-listener")
 const itemsBinList = document.getElementById("items-bin-list")
 const totalContainer = document.getElementById("total-container")
 const sectionTitle = document.getElementById("section-title")

@@ -7,6 +7,8 @@ itemsList.addEventListener("click", itemSelector)
 itemsBinList.addEventListener("click", itemBinSelector)
 
 function itemSelector(e){
+    console.log(e.target)
+
     let idSelected = parseInt(e.target.id)
     
     if(!isNaN(parseInt(e.target.id))){

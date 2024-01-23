@@ -19,7 +19,6 @@ const settingsBinAccessBtn = document.getElementById("settings-access-btn")
 const eraseAccessBtn = document.getElementById("erase-access-btn")
 
 
-
 // Nav buttons
 navAddBtn.addEventListener("click", showAddWindow)
 backBtn.addEventListener("click", hideAddWindow)
@@ -57,7 +56,6 @@ eraseAccessBtn.addEventListener("click", () => {
     console.log(currentPage.a)
     hideMenuWindow()
 })
-
 
 
 function showMenuWindow(){

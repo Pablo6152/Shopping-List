@@ -185,12 +185,20 @@ h1, h2, h3, p{
     color: var(--secondary-accent-color);
     background-color: var(--secondary-color);
 }
-.delete-btn{
+.item-edit-icon{
+    color: var(--secondary-accent-color);
+    background-color: var(--secondary-color);
+}
+.item-btn{
     display: block;
     border: none;
     background-color: var(--secondary-color);
+    margin-left: 1.4em;
+    padding: 0;
 }
-
+.item-icon{
+    font-size: 1.8rem;
+}
 .add-container{
     background-color: rgba(0,0,0,.4);
 
@@ -366,6 +374,9 @@ h1, h2, h3, p{
 }
 .items-list{
     margin-bottom: 1em;
+}
+.item-user-options{
+    display: flex;
 }
 .settings-list{
     display: flex;
