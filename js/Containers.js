@@ -1,6 +1,7 @@
 const addContainer = document.getElementById("add-container")
 const menuContainer = document.getElementById("menu-container")
 const itemsList = document.getElementById("items-list-event-listener")
+const favoriteItemsList = document.getElementById("favorite-items-list")
 const itemsBinList = document.getElementById("items-bin-list")
 const totalContainer = document.getElementById("total-container")
 const sectionTitle = document.getElementById("section-title")
@@ -27,6 +28,7 @@ export {
     favoriteSectionContainer,
     budgetSectionContainer,
     settingsSectionContainer,
-    eraseSectionContainer
+    eraseSectionContainer,
+    favoriteItemsList
     
 }

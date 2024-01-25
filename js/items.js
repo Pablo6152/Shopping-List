@@ -2,9 +2,37 @@ import { itemAddName, itemAddPrice, itemAddDate } from "./input.js"
 import { hideAddWindow } from "./Buttons.js"
 import { totalContainer, itemsList } from "./Containers.js"
 import { renderApp } from "./index.js"
+import { removeItem } from "./itemsBin.js"
+import { toFavoriteItem } from "./favoriteItems.js"
 
 let items = []
 
+
+
+itemsList.addEventListener("click", itemSelector)
+
+function itemSelector(e){
+    // console.log(`
+    // Item id=${e.target.parentNode.id}
+    // Operation=${e.target.id}
+    // `)
+
+    if (e.target.id == "e"){
+        editItems()
+    } else if (e.target.id == "f"){
+        // toFavoriteItem(e.target.parentNode.id)
+        console.log(`Trigger btn: ${e.target.parentNode.id}`)
+    } else if (e.target.id == "r"){
+        // e.target.parentNode.id is the id of the item, 0 is the origin "Items"
+        removeItem(e.target.parentNode.id, 0)
+    }
+
+}
+
+
+function editItems(){
+    console.log("Edit")
+}
 
 function submitItem(){
     items.push(
@@ -70,23 +98,17 @@ function renderItems(){
 
                 <div id="${itemsDisplay[i].id}" class="item-user-options">
 
-                    <button class="item-btn">
-                        <span class="material-symbols-outlined item-edit-icon item-icon">
+                    <span id="e" class="material-symbols-outlined item-edit-icon item-icon item-btn">
                             edit
-                        </span>
-                    </button>
+                    </span>
                     
-                    <button class="item-btn">
-                        <span class="material-symbols-outlined menu-favorite-icon item-icon">
+                    <span id="f" class="material-symbols-outlined menu-favorite-icon item-icon item-btn">
                             favorite
-                        </span>
-                    </button>
+                    </span>
 
-                    <button class="item-btn">
-                        <span class="material-symbols-outlined item-delete-icon item-icon">
+                    <span id="r" class="material-symbols-outlined item-delete-icon item-icon item-btn">
                             delete
-                        </span>
-                    </button>
+                    </span>
                 </div>
 
                 </div>

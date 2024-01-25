@@ -28,9 +28,13 @@ currentPage.registerListener(function(val) {
 
 function renderApp(){
     render()
-
     console.log("App refreshed")
 }
+
+function remove(){
+  console.log("r")
+}
+
 
 loadTheme()
 renderApp(currentPage.a)

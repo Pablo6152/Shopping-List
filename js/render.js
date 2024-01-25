@@ -1,4 +1,5 @@
 import { renderItems } from "./items.js"
+import { renderFavoriteItems } from "./favoriteItems.js"
 import { renderItemsBin } from "./itemsBin.js"
 import { 
     itemSectionContainer, 
@@ -40,6 +41,7 @@ function render(){
         appSearch.classList.remove("hide-window")
         sectionTitle.textContent = "Favorites"
 
+        renderFavoriteItems()
     } else if (currentPage.a == 2){
         itemSectionContainer.classList.add("hide-window")
         favoriteSectionContainer.classList.add("hide-window")

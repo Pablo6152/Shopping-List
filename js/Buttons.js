@@ -8,6 +8,9 @@ const navMenuBtn = document.getElementById("action-menu")
 const closeBtn = document.getElementById("close-btn")
 const backBtn = document.getElementById("back-btn")
 const addItemBtn = document.getElementById("add-item")
+// const editBtn = document.getElementById("e")
+
+
 
 // New Menu buttons
 const homeAccessBtn = document.getElementById("home-access-btn")

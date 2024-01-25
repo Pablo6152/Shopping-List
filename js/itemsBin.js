@@ -1,33 +1,54 @@
-import { itemsList, itemsBinList } from "./Containers.js"
+import { itemsBinList } from "./Containers.js"
 import { saveItems, items } from "./items.js"
+import { saveFavoriteItems, favoriteItems } from "./favoriteItems.js"
 import { renderApp } from "./index.js"
 let itemsBin = []
 
-itemsList.addEventListener("click", itemSelector)
 itemsBinList.addEventListener("click", itemBinSelector)
 
-function itemSelector(e){
-    console.log(e.target)
+function removeItem(itemId, origin){
+    let idSelected = parseInt(itemId)
 
-    let idSelected = parseInt(e.target.id)
+    // console.log(itemId, origin)
     
-    if(!isNaN(parseInt(e.target.id))){
-        let itemsBinBuffer = []
-        itemsBinBuffer = items.splice(parseInt(e.target.id), 1)
-        
-        for (let i = 0; i < itemsBinBuffer.length; i++) {
-            itemsBinBuffer[i].id = itemsBin.length
+        if(!isNaN(parseInt(itemId))  && origin == 0){
+            let itemsBinBuffer = []
+            itemsBinBuffer = items.splice(parseInt(itemId), 1)
+            
+            for (let i = 0; i < itemsBinBuffer.length; i++) {
+                itemsBinBuffer[i].id = itemsBin.length
+            }
+    
+            itemsBin.push(itemsBinBuffer[0])
+    
+            for (let i = idSelected; i < items.length; i++) { 
+                items[i].id--
+            }
+    
+            saveItems()
+            saveItemsBin()
+            renderApp()
         }
 
-        itemsBin.push(itemsBinBuffer[0])
+    if (!isNaN(parseInt(itemId)) && origin == 1){
+            let itemsBinBuffer = []
+            itemsBinBuffer = favoriteItems.splice(parseInt(itemId), 1)
+            
+            // console.log(favoriteItems)
+            
+            for (let i = 0; i < itemsBinBuffer.length; i++) {
+                itemsBinBuffer[i].id = itemsBin.length
+            }
 
-        for (let i = idSelected; i < items.length; i++) { 
-            items[i].id--
-        }
-
-        saveItems()
-        saveItemsBin()
-        renderApp()
+            itemsBin.push(itemsBinBuffer[0])
+    
+            for (let i = idSelected; i < favoriteItems.length; i++) { 
+                favoriteItems[i].id--
+            }
+    
+            saveFavoriteItems()
+            saveItemsBin()
+            renderApp()
     }
 }
 
@@ -96,4 +117,4 @@ function renderItemsBin(){
 
 }
 
-export { itemSelector, renderItemsBin, itemsBin }
+export { renderItemsBin, itemsBin, removeItem }
