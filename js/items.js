@@ -20,7 +20,7 @@ function itemSelector(e){
     if (e.target.id == "e"){
         editItems()
     } else if (e.target.id == "f"){
-        // toFavoriteItem(e.target.parentNode.id)
+        toFavoriteItem(e.target.parentNode.id)
         console.log(`Trigger btn: ${e.target.parentNode.id}`)
     } else if (e.target.id == "r"){
         // e.target.parentNode.id is the id of the item, 0 is the origin "Items"

@@ -31,10 +31,6 @@ function renderApp(){
     console.log("App refreshed")
 }
 
-function remove(){
-  console.log("r")
-}
-
 
 loadTheme()
 renderApp(currentPage.a)

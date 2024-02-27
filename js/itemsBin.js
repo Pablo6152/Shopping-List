@@ -100,7 +100,7 @@ function renderItemsBin(){
                 <p class="item-name">${itemsBinDisplay[i].name}</p>
 
                 <button class="delete-btn">
-                    <span id="${itemsBinDisplay[i].id}" class="material-symbols-outlined item-undo-icon">
+                    <span id="${itemsBinDisplay[i].id}" class="material-symbols-outlined item-icon item-undo-icon">
                         undo
                     </span>
                 </button>
