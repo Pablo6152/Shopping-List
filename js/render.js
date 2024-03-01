@@ -25,7 +25,7 @@ function render(){
         settingsSectionContainer.classList.add("hide-window")
         eraseSectionContainer.classList.add("hide-window")
         appSearch.classList.remove("hide-window")
-        sectionTitle.textContent = "Shopping List"
+        sectionTitle.textContent = "Shopping helper"
 
         // Need to change name due to this function now calculating instead of rendering
         renderItems()
